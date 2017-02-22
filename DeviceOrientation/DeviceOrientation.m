@@ -21,18 +21,14 @@ static const float sensitive = 0.77;
 
 @implementation DeviceOrientation
 
-+ (instancetype)shareInstance {
-    
-    static  DeviceOrientation *instance;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        if (instance == nil) {
-            instance = [[DeviceOrientation alloc] init];
-        }
-    });
-    return instance;
+- (instancetype)initWithDelegate:(id<DeviceOrientationDelegate>)delegate {
+    self = [super init];
+    if (self) {
+        
+        _delegate = delegate;
+    }
+    return self;
 }
-
 - (void)startMonitor {
     
     [self start];

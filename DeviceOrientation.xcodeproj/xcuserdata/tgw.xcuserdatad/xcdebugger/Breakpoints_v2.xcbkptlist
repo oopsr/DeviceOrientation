@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DeviceOrientation/ViewController.m"
-            timestampString = "509424780.480117"
+            timestampString = "509443613.074931"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "-directionChange:"
             landmarkType = "7">
          </BreakpointContent>

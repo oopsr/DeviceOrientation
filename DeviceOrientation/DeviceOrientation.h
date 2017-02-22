@@ -25,7 +25,7 @@ typedef NS_ENUM(NSInteger,TgDirection) {
 
 @property(nonatomic,strong)id<DeviceOrientationDelegate>delegate;
 
-+ (instancetype)shareInstance;
+- (instancetype)initWithDelegate:(id<DeviceOrientationDelegate>)delegate;
 /**
  开启监听
  */
