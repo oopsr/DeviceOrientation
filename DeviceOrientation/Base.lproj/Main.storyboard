@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5n-AJ-gV4">
+                                <frame key="frameInset" minX="147" minY="174" width="62" height="30"/>
+                                <state key="normal" title="开始监听"/>
+                                <connections>
+                                    <action selector="startMonitor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1aw-g3-OdI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ale-8Y-OZD">
+                                <frame key="frameInset" minX="147" minY="263" width="62" height="30"/>
+                                <state key="normal" title="结束监听"/>
+                                <connections>
+                                    <action selector="stop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J4F-Lo-PbK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9a-LY-XwZ">
+                                <frame key="frameInset" minX="157" minY="382"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ale-8Y-OZD" firstAttribute="top" secondItem="L5n-AJ-gV4" secondAttribute="bottom" constant="59" id="0ve-7L-IU9"/>
+                            <constraint firstItem="L5n-AJ-gV4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="154" id="I85-al-N8i"/>
+                            <constraint firstItem="w9a-LY-XwZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tcf-2g-rzc"/>
+                            <constraint firstItem="L5n-AJ-gV4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gak-lj-oqL"/>
+                            <constraint firstItem="w9a-LY-XwZ" firstAttribute="top" secondItem="ale-8Y-OZD" secondAttribute="bottom" constant="89" id="h1T-1w-UB8"/>
+                            <constraint firstItem="ale-8Y-OZD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xNN-JH-Hme"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loglabel" destination="w9a-LY-XwZ" id="Ceo-6O-3I1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
