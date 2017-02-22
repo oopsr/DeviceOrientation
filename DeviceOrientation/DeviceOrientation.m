@@ -35,7 +35,7 @@ static const float sensitive = 0.77;
 
 - (void)startMonitor {
     
-    [self startMotionManager];
+    [self start];
 }
 
 - (void)stop {
@@ -45,26 +45,25 @@ static const float sensitive = 0.77;
 
 
 //陀螺仪 每隔一个间隔做轮询
-- (void)startMotionManager{
+- (void)start{
     
     if (_motionManager == nil) {
+        
         _motionManager = [[CMMotionManager alloc] init];
     }
-    _motionManager.deviceMotionUpdateInterval = 1/15.0;
+    _motionManager.deviceMotionUpdateInterval = 1/40.f;
     if (_motionManager.deviceMotionAvailable) {
-        NSLog(@"Device Motion Available");
+        
         [_motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue currentQueue]
                                             withHandler: ^(CMDeviceMotion *motion, NSError *error){
-                                                [self performSelectorOnMainThread:@selector(handleDeviceMotion:) withObject:motion waitUntilDone:YES];
+                                                [self performSelectorOnMainThread:@selector(deviceMotion:) withObject:motion waitUntilDone:YES];
                                             }];
-    } else {
-        NSLog(@"No device motion on device.");
     }
 }
-- (void)handleDeviceMotion:(CMDeviceMotion *)deviceMotion{
+- (void)deviceMotion:(CMDeviceMotion *)motion{
     
-    double x = deviceMotion.gravity.x;
-    double y = deviceMotion.gravity.y;
+    double x = motion.gravity.x;
+    double y = motion.gravity.y;
     if (y < 0 ) {
         if (fabs(y) > sensitive) {
             if (_direction != TgDirectionPortrait) {
